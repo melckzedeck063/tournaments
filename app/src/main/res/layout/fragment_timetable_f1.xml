@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2E2D2D"
+    android:orientation="vertical"
+    tools:context=".TimetableF1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45sp"
+        android:background="@color/black"
+        android:orientation="vertical"
+        tools:ignore="TextSizeCheck">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="TIME TABLE"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150sp"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginRight="20sp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5sp"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:padding="20sp"
+                    android:text="Date"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    tools:ignore="HardcodedText" />
+
+                <EditText
+                    android:id="@+id/TIMETABLE_date_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:hint="Not uploaded"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:padding="20sp"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    tools:ignore="DuplicateSpeakableTextCheck,HardcodedText,TextContrastCheck,TextFields,VisualLintTextFieldSize" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150sp"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginRight="20sp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5sp"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:padding="20sp"
+                    android:text="Match day"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    tools:ignore="HardcodedText" />
+
+                <EditText
+                    android:id="@+id/TIMETABLE_match_day_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:hint="Not uploaded"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:padding="20sp"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    tools:ignore="HardcodedText,VisualLintTextFieldSize,TextContrastCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150sp"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginRight="20sp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5sp"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:padding="20sp"
+                    android:text="Time"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    tools:ignore="HardcodedText" />
+
+                <EditText
+                    android:id="@+id/TIMETABLE_time_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:hint="Not uploaded"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:padding="20sp"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    tools:ignore="HardcodedText,VisualLintTextFieldSize,TextContrastCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150sp"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginRight="20sp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5sp"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:padding="20sp"
+                    android:text="Ground"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    tools:ignore="HardcodedText" />
+
+                <EditText
+                    android:id="@+id/TIMETABLE_ground_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:hint="Not uploaded"
+                    android:inputType="text"
+                    android:padding="20sp"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    tools:ignore="Autofill,DuplicateSpeakableTextCheck,HardcodedText,TextContrastCheck,VisualLintTextFieldSize" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150sp"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginRight="20sp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5sp"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:padding="20sp"
+                    android:text="Team(s)"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    tools:ignore="HardcodedText" />
+
+                <EditText
+                    android:id="@+id/TIMETABLE_teams_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:hint="Not uploaded"
+                    android:inputType="text"
+                    android:padding="20sp"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    tools:ignore="Autofill,HardcodedText,TextContrastCheck,VisualLintTextFieldSize" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

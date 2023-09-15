@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".Login">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60sp"
+        android:orientation="vertical"
+        android:padding="10sp"
+        android:background="@color/black">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LOGIN"
+            android:textStyle="bold"
+            android:fontFamily="serif"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/error_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="error display"
+        android:visibility="invisible"
+        android:layout_marginLeft="16sp"
+        android:drawableLeft="@drawable/warning"
+        android:layout_marginTop="5sp"
+        android:textColor="#FF0000"
+        tools:ignore="HardcodedText,RtlHardcoded,UseCompatTextViewDrawableXml" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/username"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="16sp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint=" username"
+                    android:inputType="text"
+                    android:textColorHint="#757575"
+                    tools:ignore="HardcodedText,RtlHardcoded,TextContrastCheck,VisualLintTextFieldSize">
+
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/password"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16sp"
+                android:layout_marginRight="16sp"
+                app:passwordToggleEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint=" password"
+                    android:inputType="textPassword"
+                    tools:ignore="HardcodedText,TextContrastCheck,VisualLintTextFieldSize">
+
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/login_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20sp"
+                android:layout_marginBottom="100dp"
+                android:backgroundTint="@color/black"
+                android:fontFamily="serif"
+                android:text="Login"
+                tools:ignore="HardcodedText,RtlHardcoded,VisualLintButtonSize" />
+
+</LinearLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home1"
+        android:icon="@drawable/home"
+        android:title="Home"
+        tools:ignore="HardcodedText" />
+    <item
+        android:id="@+id/timetable1"
+        android:icon="@drawable/timeable"
+        android:title="Time table"
+        tools:ignore="HardcodedText" />
+    <item
+        android:id="@+id/team1"
+        android:icon="@drawable/team"
+        android:title="Team"
+        tools:ignore="HardcodedText" />
+    <item
+        android:id="@+id/player1"
+        android:icon="@drawable/player"
+        android:title="Player"
+        tools:ignore="HardcodedText" />
+    <item
+        android:id="@+id/standing1"
+        android:icon="@drawable/standing"
+        android:title="Standing"
+        tools:ignore="HardcodedText" />
+
+    <item
+        android:id="@+id/student1"
+        android:icon="@drawable/student"
+        android:title="Student"
+        tools:ignore="HardcodedText" />
+    <item
+        android:id="@+id/results1"
+        android:icon="@drawable/results"
+        android:title="Metch results"
+        tools:ignore="HardcodedText" />
+
+</menu>

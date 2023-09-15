@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homes"
+        android:icon="@drawable/home"
+        android:title="Home"/>
+    <item
+        android:id="@+id/timetables"
+        android:icon="@drawable/timeable"
+        android:title="Time table"/>
+    <item
+        android:id="@+id/teams"
+        android:icon="@drawable/team"
+        android:title="Team"/>
+    <item
+        android:id="@+id/standings"
+        android:icon="@drawable/standing"
+        android:title="Standing"/>
+    <item
+        android:id="@+id/resultss"
+        android:icon="@drawable/results"
+        android:title="Results"/>
+</menu>
