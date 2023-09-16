@@ -3,62 +3,108 @@ package com.example.cive_field_cup;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link TeamF1#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+
+
 public class TeamF1 extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public TeamF1() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment TeamF1.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static TeamF1 newInstance(String param1, String param2) {
-        TeamF1 fragment = new TeamF1();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    private RequestQueue requestQueue;
+    private StringRequest stringRequest;
+    private String teamsURL = "http://192.168.43.33/field/teams.php";
+    private TeamAdapter teamAdapter;
+    private ArrayList<TeamModel> teamModelArrayList;
+    private RecyclerView recyclerView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_team_f1, container, false);
+        View view = inflater.inflate(R.layout.fragment_team_f1, container, false);
+
+        recyclerView = view.findViewById(R.id.team_recycler);
+        teamModelArrayList = new ArrayList<>(); // Your data source
+
+// Create and set the adapter
+        teamAdapter = new TeamAdapter(teamModelArrayList, getContext());
+        recyclerView.setAdapter(teamAdapter);
+
+// Set the layout manager
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+        recyclerView.setNestedScrollingEnabled(false);
+
+        getTeamsData();
+
+        return view;
+    }
+
+    private void getTeamsData() {
+        stringRequest = new StringRequest(Request.Method.GET, teamsURL,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            String results = jsonObject.getString("success");
+                            if (results.equals("1")) {
+                                JSONArray jsonArray = jsonObject.getJSONArray("teams_data");
+
+                                teamModelArrayList = new ArrayList<>();
+
+                                for (int i = 0; i < jsonArray.length(); i++) {
+                                    JSONObject jsonObject1 = jsonArray.getJSONObject(i);
+                                    teamModelArrayList.add(new TeamModel(
+                                            jsonObject1.getInt("team_id"),
+                                            jsonObject1.getString("team"),
+                                            jsonObject1.getString("coach"),
+                                            jsonObject1.getInt("points"),
+                                            jsonObject1.getInt("position"),
+                                            jsonObject1.getInt("goals")
+
+                                    ));
+                                }
+
+                                teamAdapter = new TeamAdapter(teamModelArrayList, getContext());
+                                recyclerView.setAdapter(teamAdapter);
+//
+//                                recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+//                                recyclerView.setNestedScrollingEnabled(false);
+
+                            } else {
+                                Toast.makeText(getContext(), jsonObject.getString("message"), Toast.LENGTH_LONG).show();
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
+                    }
+                }
+        );
+
+        requestQueue = Volley.newRequestQueue(getContext());
+        requestQueue.add(stringRequest);
     }
 }
