@@ -119,7 +119,7 @@ private StringRequest stringRequest;
 
                               if (success.equals("1")) {
                                   Toast.makeText(getContext(),  message.toString(), Toast.LENGTH_SHORT).show();
-                                  Intent intent = new Intent(getActivity(),Student.class);
+                                  Intent intent = new Intent(getActivity(),Admin.class);
                                   startActivity(intent);
                                   // Handle success, e.g., show a success message
                               } else {
