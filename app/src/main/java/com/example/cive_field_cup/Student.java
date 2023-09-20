@@ -8,14 +8,18 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.google.android.material.navigation.NavigationView;
 
 public class Student extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     DrawerLayout drawer;
+    Button LogoutBtn;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -29,6 +33,14 @@ public class Student extends AppCompatActivity implements NavigationView.OnNavig
         setSupportActionBar(toolbar);
 
         drawer = findViewById(R.id.drawer);
+        LogoutBtn = findViewById(R.id.std_logout);
+
+        LogoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Student.this, Login.class));
+            }
+        });
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawer,toolbar,R.string.navigation_drawer_open
         ,R.string.navigation_drawer_close);

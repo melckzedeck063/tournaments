@@ -7,14 +7,20 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.google.android.material.navigation.NavigationView;
 
 public class Admin extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     DrawerLayout drawer2;
+    Button LogoutBtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +34,13 @@ public class Admin extends AppCompatActivity implements NavigationView.OnNavigat
         setSupportActionBar(toolbar);
 
         drawer2 = findViewById(R.id.drawer2);
+        LogoutBtn = findViewById(R.id.admn_logout);
+        LogoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Admin.this, Login.class));
+            }
+        });
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawer2,toolbar,R.string.navigation_drawer_open
         ,R.string.navigation_drawer_close);
         drawer2.addDrawerListener(toggle);

@@ -33,12 +33,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:id="@+id/points">
+        android:id="@+id/match">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="points"
+            android:hint="Match"
             android:layout_marginLeft="16sp"
             android:layout_marginRight="16sp"
             android:inputType="text"
@@ -51,12 +51,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:id="@+id/fouls">
+        android:id="@+id/red_cards">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Fouls"
+            android:hint="Red Cards"
             android:layout_marginRight="16sp"
             android:layout_marginLeft="16sp"
             android:inputType="text"
@@ -69,37 +69,37 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:id="@+id/cards">
+        android:id="@+id/yellow_cards">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16sp"
             android:layout_marginRight="16sp"
-            android:hint="Cards"
+            android:hint="Yellow Cards"
             android:inputType="text"
             tools:ignore="HardcodedText,TextContrastCheck,VisualLintTextFieldSize">
 
         </com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:id="@+id/admin_ID">
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--        android:id="@+id/admin_ID">-->
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="16sp"
-            android:layout_marginLeft="16sp"
-            android:hint="Admin ID"
-            android:inputType="text"
-            tools:ignore="HardcodedText,TextContrastCheck,VisualLintTextFieldSize">
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginRight="16sp"-->
+<!--            android:layout_marginLeft="16sp"-->
+<!--            android:hint="Admin ID"-->
+<!--            android:inputType="text"-->
+<!--            tools:ignore="HardcodedText,TextContrastCheck,VisualLintTextFieldSize">-->
 
-        </com.google.android.material.textfield.TextInputEditText>
-    </com.google.android.material.textfield.TextInputLayout>
+<!--        </com.google.android.material.textfield.TextInputEditText>-->
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -123,12 +123,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:id="@+id/scored_player">
+        android:id="@+id/valuable_player">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Scored player"
+            android:hint="MVP"
             android:layout_marginRight="16sp"
             android:layout_marginLeft="16sp"
             android:inputType="text"
@@ -160,7 +160,7 @@
             tools:ignore="ButtonStyle,HardcodedText,RtlHardcoded" />
 
         <Button
-            android:id="@+id/match_result_edit"
+            android:id="@+id/match_result_submit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Upload"
